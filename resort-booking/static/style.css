@@ -1,0 +1,330 @@
+/* -----------------------
+   GENERAL BODY STYLE
+------------------------ */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: url("Background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+/*LOGIN BOX*/
+.login-box {
+  position: relative;
+  background: url("background2.jpg") no-repeat center center;
+  background-size: cover;
+  margin-top: 50px;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.3);
+  width: 350px;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.login-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 12px;
+  z-index: 0;
+}
+
+.login-box * {
+  position: relative;
+  z-index: 1;
+}
+
+.login-box h2 {
+  margin-bottom: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+}
+
+.login-box p {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #444;
+}
+
+/* Input fields */
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-group i {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 18px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 40px 12px 40px;
+  border: none;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.input-group i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+}
+
+.input-group .toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #666;
+}
+
+/*BUTTONS*/
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: background 0.3s;
+}
+
+/* Google button */
+.google-btn {
+  background-color: #4285f4;
+  color: white;
+  font-weight: bold;
+}
+
+.google-btn:hover {
+  background-color: #357ae8;
+}
+
+/* Facebook button */
+.btn-facebook {
+  background-color: #1877f2;
+  color: white;
+  font-weight: bold;
+}
+
+.btn-facebook:hover {
+  background-color: #145db2;
+}
+
+/* Optional signup button */
+.signup-btn {
+  padding: 10px 20px;
+  border-radius: 6px;
+  background: #a6e9ea;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.signup-btn:hover {
+  background: #89d6d8;
+}
+
+/* Options links */
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.options a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Divider for login methods */
+.divider {
+  margin: 15px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+/*RESORTS PAGE*/
+.container {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
+  text-align: center;
+  color: black;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 12px;
+  z-index: 0;
+}
+
+.container * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Resorts header + logout button */
+.resorts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+}
+
+.resorts-header h1 {
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+  font-weight: 600;
+}
+
+.logout-btn {
+  text-decoration: none;
+  padding: 6px 14px;
+  background-color: #f44336;
+  color: white;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* Grid for resorts */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: blanchedalmond;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.card p {
+  margin: 10px;
+  font-weight: bold;
+  color: #444;
+}
+
+.card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/*BOOKING FORM*/
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+  text-align: left;
+}
+
+form label {
+  font-weight: bold;
+  color: #333;
+}
+
+form input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+form button {
+  background: #a6e9ea;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background: #89d6d8;
+}
+
+/* Back button */
+.back-btn {
+  margin-top: 20px;
+}
+
+.back-btn a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+/*MOBILE ADJUSTMENTS*/
+@media (max-width: 600px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+}

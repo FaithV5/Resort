@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Your Resort</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+<h1>Booking for {{ resort }}</h1>
+
+<form method="POST">
+  <input type="hidden" name="resort" value="{{ resort }}">
+  
+  <label>Name:</label>
+  <input type="text" name="name" required>
+
+  <label>Email:</label>
+  <input type="email" name="email" required>
+
+  <label>Check-in Date:</label>
+  <input type="date" name="checkin" required>
+
+  <label>Nights:</label>
+  <input type="number" name="nights" min="1" required>
+
+  <label>Guests:</label>
+  <input type="number" name="guests" min="1" required>
+
+  <button type="submit">Confirm Booking</button>
+</form>
+
+    <div class="back-btn">
+      <a href="{{ url_for('resorts') }}">← Back to Resorts</a>
+    </div>
+  </div>
+
+  <script>
+    // Get resort name from URL and set it
+    const params = new URLSearchParams(window.location.search);
+    const resort = params.get("resort");
+    if (resort) {
+      document.getElementById("resort").value = resort;
+    }
+  </script>
+</body>
+</html>
