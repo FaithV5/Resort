@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Your Resort</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <div class="resorts-header">
+        {% if user.get('role') == 'admin' %}
+          <h1>Welcome, Admin</h1>
+        {% elif user.get('name') %}
+          <h1>Welcome, {{ user['name'] }}</h1>
+        {% else %}
+          <h1>Welcome, {{ user['username'] }}</h1>
+        {% endif %}
+        <a href="{{ url_for('logout') }}" class="logout-btn">Log-out</a>
+    </div>    
+
+    <h1>Choose Your Resort</h1>
+    <div class="grid">
+      <div class="card">
+        <a href="{{ url_for('booking') }}?resort=Bisa%20Bayside%20Resort">
+          <img src="{{ url_for('static', filename='Bisa Bayside Resort.jpg') }}" alt="Bisa Bayside Resort">
+          <p>Bisa Bayside Resort</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="{{ url_for('booking') }}?resort=Parecca%20Resort">
+          <img src="{{ url_for('static', filename='Parecaa Resort.jpg') }}" alt="Parecaa Resort">
+          <p>Parecca Resort</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="{{ url_for('booking') }}?resort=Anilao%20Awari%20Bay%20Resort">
+          <img src="{{ url_for('static', filename='Anilao Awari Bay Resort.jpg') }}" alt="Anilao Awari Bay Resort">
+          <p>Anilao Awari Bay Resort</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="{{ url_for('booking') }}?resort=Camp%20Netanya%20Resort">
+          <img src="{{ url_for('static', filename='Camp Netanya.jpg') }}" alt="Camp Netanya Resort">
+          <p>Camp Netanya Resort</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="{{ url_for('booking') }}?resort=Casa%20Teofila%20Private%20Resort">
+          <img src="{{ url_for('static', filename='Casa Teofila Private Resort.jpg') }}" alt="Casa Teofila Private Resort">
+          <p>Casa Teofila Private Resort</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="{{ url_for('booking') }}?resort=Casita%20Ysabel">
+          <img src="{{ url_for('static', filename='Casita Ysabel.jpg') }}" alt="Casita Ysabel">
+          <p>Casita Ysabel</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="{{ url_for('booking') }}?resort=Aquaventure%20Reef%20Club">
+          <img src="{{ url_for('static', filename='Aquaventure Reef Club Resort.jpg') }}" alt="Aquaventure Reef Club">
+          <p>Aquaventure Reef Club</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="{{ url_for('booking') }}?resort=Freediving%20Buddies%20PH">
+          <img src="{{ url_for('static', filename='Freediving Buddies PH.jpg') }}" alt="Freediving Buddies PH">
+          <p>Freediving Buddies PH</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="{{ url_for('booking') }}?resort=Lakbay%20Freediving">
+          <img src="{{ url_for('static', filename='Lakbay Freediving.jpg') }}" alt="Lakbay Freediving">
+          <p>Lakbay Freediving</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="{{ url_for('booking') }}?resort=Sea%20Diver%20PH">
+          <img src="{{ url_for('static', filename='Sea Diver PH.jpg') }}" alt="Sea Diver PH">
+          <p>Sea Diver PH</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
